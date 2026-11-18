@@ -1,0 +1,542 @@
+{
+ "version": 1,
+ "origin": "Selección propia de NEXUM Intelligence Systems",
+ "tools": [
+  {
+   "name": "Sherlock",
+   "url": "https://github.com/sherlock-project/sherlock",
+   "category": "Alias y personas",
+   "cost": "Código abierto",
+   "account": false,
+   "what": "Busca un nombre de usuario en cientos de redes sociales desde la terminal."
+  },
+  {
+   "name": "Maigret",
+   "url": "https://github.com/soxoj/maigret",
+   "category": "Alias y personas",
+   "cost": "Código abierto",
+   "account": false,
+   "what": "Reúne el perfil de un alias en miles de sitios y arma un reporte con los datos que encuentra."
+  },
+  {
+   "name": "WhatsMyName",
+   "url": "https://whatsmyname.app",
+   "category": "Alias y personas",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Versión web del proyecto WhatsMyName: verifica un alias en cientos de sitios con detección ajustada."
+  },
+  {
+   "name": "Social Searcher",
+   "url": "https://www.social-searcher.com",
+   "category": "Alias y personas",
+   "cost": "Gratis con registro",
+   "account": false,
+   "what": "Busca menciones públicas de un nombre o palabra en redes sociales y blogs."
+  },
+  {
+   "name": "Namechk",
+   "url": "https://namechk.com",
+   "category": "Alias y personas",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Comprueba si un nombre de usuario o dominio está en uso en las redes más comunes."
+  },
+  {
+   "name": "Epieos",
+   "url": "https://epieos.com",
+   "category": "Correo",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Relaciona un correo con cuentas de Google y otros servicios, con datos públicos del perfil."
+  },
+  {
+   "name": "Hunter",
+   "url": "https://hunter.io",
+   "category": "Correo",
+   "cost": "Gratis con registro",
+   "account": true,
+   "what": "Encuentra y verifica correos asociados a un dominio; el plan gratuito tiene cuota mensual."
+  },
+  {
+   "name": "EmailRep",
+   "url": "https://emailrep.io",
+   "category": "Correo",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Puntúa la reputación de un correo y dice si ha aparecido en filtraciones o actividad sospechosa."
+  },
+  {
+   "name": "Have I Been Pwned",
+   "url": "https://haveibeenpwned.com",
+   "category": "Correo",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Indica en qué filtraciones públicas aparece un correo, con fecha y tipo de datos."
+  },
+  {
+   "name": "XposedOrNot",
+   "url": "https://xposedornot.com",
+   "category": "Correo",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Verifica filtraciones de un correo con detalle de datos expuestos y nivel de riesgo."
+  },
+  {
+   "name": "Holehe",
+   "url": "https://github.com/megadose/holehe",
+   "category": "Correo",
+   "cost": "Código abierto",
+   "account": false,
+   "what": "Comprueba en qué servicios hay una cuenta registrada con un correo, sin avisar al titular."
+  },
+  {
+   "name": "PhoneInfoga",
+   "url": "https://github.com/sundowndev/phoneinfoga",
+   "category": "Teléfono",
+   "cost": "Código abierto",
+   "account": false,
+   "what": "Valida un número y reúne país, operador, tipo de línea y búsquedas dirigidas."
+  },
+  {
+   "name": "Google libphonenumber",
+   "url": "https://github.com/google/libphonenumber",
+   "category": "Teléfono",
+   "cost": "Código abierto",
+   "account": false,
+   "what": "Biblioteca de referencia para validar, formatear e identificar el tipo de un número."
+  },
+  {
+   "name": "crt.sh",
+   "url": "https://crt.sh",
+   "category": "Dominios y red",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Consulta los registros de transparencia de certificados para descubrir subdominios."
+  },
+  {
+   "name": "DNSDumpster",
+   "url": "https://dnsdumpster.com",
+   "category": "Dominios y red",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Mapa de DNS de un dominio: servidores, subdominios y relaciones de red."
+  },
+  {
+   "name": "ViewDNS.info",
+   "url": "https://viewdns.info",
+   "category": "Dominios y red",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Conjunto de consultas DNS: IP histórica, DNS inverso, WHOIS inverso y más."
+  },
+  {
+   "name": "SecurityTrails",
+   "url": "https://securitytrails.com",
+   "category": "Dominios y red",
+   "cost": "Gratis con registro",
+   "account": true,
+   "what": "Historial de DNS y subdominios; el plan gratuito limita las consultas al mes."
+  },
+  {
+   "name": "urlscan.io",
+   "url": "https://urlscan.io",
+   "category": "Dominios y red",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Escanea y archiva una página mostrando sus solicitudes, IPs y recursos."
+  },
+  {
+   "name": "VirusTotal",
+   "url": "https://www.virustotal.com",
+   "category": "Dominios y red",
+   "cost": "Gratis con registro",
+   "account": true,
+   "what": "Analiza URLs, dominios, IPs y archivos contra decenas de motores de seguridad."
+  },
+  {
+   "name": "AbuseIPDB",
+   "url": "https://www.abuseipdb.com",
+   "category": "Dominios y red",
+   "cost": "Gratis con registro",
+   "account": true,
+   "what": "Base colaborativa de reportes de abuso por dirección IP."
+  },
+  {
+   "name": "Shodan",
+   "url": "https://www.shodan.io",
+   "category": "Dominios y red",
+   "cost": "Gratis con registro",
+   "account": true,
+   "what": "Buscador de dispositivos y servicios expuestos a Internet."
+  },
+  {
+   "name": "Censys",
+   "url": "https://search.censys.io",
+   "category": "Dominios y red",
+   "cost": "Gratis con registro",
+   "account": true,
+   "what": "Inventario de hosts y certificados visibles en Internet, con búsqueda por atributos."
+  },
+  {
+   "name": "Hurricane Electric BGP",
+   "url": "https://bgp.he.net",
+   "category": "Dominios y red",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Consulta rutas, prefijos y titulares de sistemas autónomos e IPs."
+  },
+  {
+   "name": "RIPEstat",
+   "url": "https://stat.ripe.net",
+   "category": "Dominios y red",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Datos de enrutamiento, WHOIS y reputación de redes del registro europeo."
+  },
+  {
+   "name": "PeeringDB",
+   "url": "https://www.peeringdb.com",
+   "category": "Dominios y red",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Directorio de operadores de red y sus puntos de interconexión."
+  },
+  {
+   "name": "Robtex",
+   "url": "https://www.robtex.com",
+   "category": "Dominios y red",
+   "cost": "Gratis",
+   "account": false,
+   "what": "DNS pasivo y relaciones entre dominios, IPs y sistemas autónomos."
+  },
+  {
+   "name": "Wayback Machine",
+   "url": "https://web.archive.org",
+   "category": "Dominios y red",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Archivo histórico de páginas web para ver versiones anteriores de un sitio."
+  },
+  {
+   "name": "Archive.today",
+   "url": "https://archive.ph",
+   "category": "Dominios y red",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Guarda una copia instantánea de una página para conservarla como evidencia."
+  },
+  {
+   "name": "SpiderFoot",
+   "url": "https://github.com/smicallef/spiderfoot",
+   "category": "Frameworks",
+   "cost": "Código abierto",
+   "account": false,
+   "what": "Plataforma de automatización OSINT con cientos de módulos y panel web."
+  },
+  {
+   "name": "theHarvester",
+   "url": "https://github.com/laramies/theHarvester",
+   "category": "Frameworks",
+   "cost": "Código abierto",
+   "account": false,
+   "what": "Recolecta correos, subdominios y nombres desde fuentes públicas."
+  },
+  {
+   "name": "Recon-ng",
+   "url": "https://github.com/lanmaster53/recon-ng",
+   "category": "Frameworks",
+   "cost": "Código abierto",
+   "account": false,
+   "what": "Framework modular de reconocimiento al estilo de Metasploit."
+  },
+  {
+   "name": "Amass",
+   "url": "https://github.com/owasp-amass/amass",
+   "category": "Frameworks",
+   "cost": "Código abierto",
+   "account": false,
+   "what": "Mapeo de superficie de ataque y descubrimiento de subdominios de OWASP."
+  },
+  {
+   "name": "Subfinder",
+   "url": "https://github.com/projectdiscovery/subfinder",
+   "category": "Frameworks",
+   "cost": "Código abierto",
+   "account": false,
+   "what": "Descubre subdominios válidos con fuentes pasivas."
+  },
+  {
+   "name": "Maltego Community",
+   "url": "https://www.maltego.com",
+   "category": "Frameworks",
+   "cost": "Gratis con registro",
+   "account": true,
+   "what": "Análisis de enlaces con grafos; la edición comunitaria es gratuita con límites."
+  },
+  {
+   "name": "OSINT Framework",
+   "url": "https://osintframework.com",
+   "category": "Frameworks",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Directorio navegable de herramientas y recursos organizados por tipo de dato."
+  },
+  {
+   "name": "Google Lens",
+   "url": "https://lens.google.com",
+   "category": "Imágenes y video",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Búsqueda inversa de imágenes y reconocimiento de lugares y objetos."
+  },
+  {
+   "name": "TinEye",
+   "url": "https://tineye.com",
+   "category": "Imágenes y video",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Búsqueda inversa que encuentra dónde más se publicó una imagen y versiones anteriores."
+  },
+  {
+   "name": "Yandex Imágenes",
+   "url": "https://yandex.com/images",
+   "category": "Imágenes y video",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Búsqueda inversa con buen resultado en rostros, lugares y contenido de Europa del Este."
+  },
+  {
+   "name": "ExifTool",
+   "url": "https://exiftool.org",
+   "category": "Imágenes y video",
+   "cost": "Código abierto",
+   "account": false,
+   "what": "Lee y edita metadatos de imágenes, videos y documentos."
+  },
+  {
+   "name": "FotoForensics",
+   "url": "https://fotoforensics.com",
+   "category": "Imágenes y video",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Análisis de nivel de error para detectar manipulación en imágenes."
+  },
+  {
+   "name": "InVID-WeVerify",
+   "url": "https://www.invid-project.eu",
+   "category": "Imágenes y video",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Extensión para verificar videos e imágenes: fotogramas, metadatos y búsqueda inversa."
+  },
+  {
+   "name": "OpenStreetMap",
+   "url": "https://www.openstreetmap.org",
+   "category": "Geolocalización",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Mapa abierto con datos detallados de calles, edificios y puntos de interés."
+  },
+  {
+   "name": "Overpass Turbo",
+   "url": "https://overpass-turbo.eu",
+   "category": "Geolocalización",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Consultas avanzadas sobre los datos de OpenStreetMap, por ejemplo todos los puntos de un tipo."
+  },
+  {
+   "name": "Mapillary",
+   "url": "https://www.mapillary.com",
+   "category": "Geolocalización",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Fotos a nivel de calle aportadas por usuarios, útiles donde no hay otra cobertura."
+  },
+  {
+   "name": "SunCalc",
+   "url": "https://www.suncalc.org",
+   "category": "Geolocalización",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Calcula la posición del sol y las sombras para verificar hora y lugar de una foto."
+  },
+  {
+   "name": "Sentinel Hub EO Browser",
+   "url": "https://apps.sentinel-hub.com/eo-browser",
+   "category": "Geolocalización",
+   "cost": "Gratis con registro",
+   "account": false,
+   "what": "Imágenes satelitales recientes e históricas para comparar un lugar en el tiempo."
+  },
+  {
+   "name": "Wikimapia",
+   "url": "https://wikimapia.org",
+   "category": "Geolocalización",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Mapa colaborativo con descripciones de edificios y lugares."
+  },
+  {
+   "name": "Flightradar24",
+   "url": "https://www.flightradar24.com",
+   "category": "Transporte",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Seguimiento de vuelos en tiempo real y su historial reciente."
+  },
+  {
+   "name": "ADS-B Exchange",
+   "url": "https://globe.adsbexchange.com",
+   "category": "Transporte",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Seguimiento de aeronaves sin filtrar, incluidas las que otros servicios ocultan."
+  },
+  {
+   "name": "MarineTraffic",
+   "url": "https://www.marinetraffic.com",
+   "category": "Transporte",
+   "cost": "Gratis con registro",
+   "account": false,
+   "what": "Posición y recorrido de embarcaciones por señal AIS."
+  },
+  {
+   "name": "OpenSky Network",
+   "url": "https://opensky-network.org",
+   "category": "Transporte",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Datos abiertos de tráfico aéreo con acceso por API."
+  },
+  {
+   "name": "OpenCorporates",
+   "url": "https://opencorporates.com",
+   "category": "Empresas y registros",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Mayor base abierta de empresas del mundo, con directivos y estado legal."
+  },
+  {
+   "name": "GLEIF",
+   "url": "https://search.gleif.org",
+   "category": "Empresas y registros",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Búsqueda de entidades legales con código LEI y su estructura de propiedad."
+  },
+  {
+   "name": "ICIJ Offshore Leaks",
+   "url": "https://offshoreleaks.icij.org",
+   "category": "Empresas y registros",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Base de datos de sociedades y personas de las investigaciones periodísticas del ICIJ."
+  },
+  {
+   "name": "OpenSanctions",
+   "url": "https://www.opensanctions.org",
+   "category": "Empresas y registros",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Listas de sanciones y personas expuestas políticamente en una sola búsqueda."
+  },
+  {
+   "name": "SEC EDGAR",
+   "url": "https://www.sec.gov/edgar",
+   "category": "Empresas y registros",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Documentos oficiales de empresas que cotizan en Estados Unidos."
+  },
+  {
+   "name": "OCCRP Aleph",
+   "url": "https://aleph.occrp.org",
+   "category": "Empresas y registros",
+   "cost": "Gratis con registro",
+   "account": false,
+   "what": "Archivo de documentos y registros públicos para investigación periodística."
+  },
+  {
+   "name": "Blockchair",
+   "url": "https://blockchair.com",
+   "category": "Criptomonedas",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Explorador multired con búsqueda de direcciones, transacciones y bloques."
+  },
+  {
+   "name": "mempool.space",
+   "url": "https://mempool.space",
+   "category": "Criptomonedas",
+   "cost": "Código abierto",
+   "account": false,
+   "what": "Explorador de Bitcoin con seguimiento de transacciones y comisiones."
+  },
+  {
+   "name": "Etherscan",
+   "url": "https://etherscan.io",
+   "category": "Criptomonedas",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Explorador de Ethereum: saldos, transacciones y contratos de una dirección."
+  },
+  {
+   "name": "Chainabuse",
+   "url": "https://www.chainabuse.com",
+   "category": "Criptomonedas",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Reportes públicos de estafas asociados a direcciones de criptomonedas."
+  },
+  {
+   "name": "Google Fact Check Explorer",
+   "url": "https://toolbox.google.com/factcheck/explorer",
+   "category": "Verificación",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Busca verificaciones publicadas por organizaciones de fact-checking."
+  },
+  {
+   "name": "Bellingcat Toolkit",
+   "url": "https://bellingcat.gitbook.io/toolkit",
+   "category": "Verificación",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Guía de herramientas y métodos de investigación abierta mantenida por Bellingcat."
+  },
+  {
+   "name": "Telemetr.io",
+   "url": "https://telemetr.io",
+   "category": "Redes sociales",
+   "cost": "Gratis con registro",
+   "account": false,
+   "what": "Estadísticas y búsqueda de canales públicos de Telegram."
+  },
+  {
+   "name": "TGStat",
+   "url": "https://tgstat.com",
+   "category": "Redes sociales",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Directorio y analítica de canales y chats públicos de Telegram."
+  },
+  {
+   "name": "Ahmia",
+   "url": "https://ahmia.fi",
+   "category": "Dark web",
+   "cost": "Gratis",
+   "account": false,
+   "what": "Buscador de servicios .onion que filtra contenido de abuso infantil."
+  },
+  {
+   "name": "Tor Browser",
+   "url": "https://www.torproject.org",
+   "category": "Dark web",
+   "cost": "Código abierto",
+   "account": false,
+   "what": "Navegador oficial para acceder a la red Tor con aislamiento de sesión."
+  }
+ ]
+}

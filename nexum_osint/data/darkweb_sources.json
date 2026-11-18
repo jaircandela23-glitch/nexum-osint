@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "name": "Ahmia (vía Tor)",
+      "url": "https://ahmia.fi/search/?q={q}",
+      "parser": "ahmia",
+      "note": "Índice público que filtra contenido de abuso infantil. Consultado a través de Tor."
+    },
+    {
+      "name": "Ahmia (servicio .onion)",
+      "url": "http://juhanurmihxlp77nkq76byazcldy2hlmovfu2epvl5ankdibsot4csyd.onion/search/?q={q}",
+      "parser": "ahmia",
+      "note": "Dirección oficial de Ahmia en Tor. Verifícala en ahmia.fi si cambia."
+    }
+  ]
+}
