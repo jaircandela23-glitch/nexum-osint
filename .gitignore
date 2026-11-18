@@ -5,3 +5,6 @@ nexum_reports/
 config.toml
 
 ANTES_DE_PUBLICAR.md
+build/
+*.egg-info/
+__pycache__/
