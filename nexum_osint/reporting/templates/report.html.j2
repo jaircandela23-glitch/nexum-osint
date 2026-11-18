@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="{{ brand.AUTHOR }} - {{ brand.COMPANY }}">
+<title>{{ brand.TOOL }} · {{ targets|join(', ') }}</title>
+<style>
+:root{--bg:#f6f7f9;--panel:#fff;--line:#dfe3e8;--txt:#1a1f27;--mut:#5c6370;--acc:#2f6fdb;--link:#2f6fdb;
+--high:#b3261e;--medium:#a35c00;--low:#1d4f91;--info:#5c6370;--warn:#a35c00;--chip:#eef1f5}
+@media (prefers-color-scheme: dark){:root{--bg:#14171c;--panel:#1b1f26;--line:#2c323b;--txt:#e3e6ea;--mut:#98a0ab;--acc:#00c8ff;--link:#6fb3ff;
+--high:#f0847d;--medium:#e0a24a;--low:#8db4e8;--info:#98a0ab;--warn:#e0a24a;--chip:#252b34}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:32px 20px 64px}
+header{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-bottom:16px;border-bottom:3px solid;border-image:linear-gradient(90deg,#00e5ff,#2f8cff,#8a5cff) 1}
+.brand{font-size:26px;font-weight:800;letter-spacing:.06em;background:linear-gradient(90deg,#00b4d8,#2f6fdb,#8a5cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand small{display:block;font-size:12.5px;font-weight:400;color:var(--mut);letter-spacing:0;margin-top:2px}
+.meta{text-align:right;color:var(--mut);font-size:12.5px}.meta b{color:var(--txt);font-weight:600}
+h2{font-size:15px;font-weight:700;color:var(--acc);margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:13px;color:var(--mut);margin:18px 0 6px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.card .n{font-size:22px;font-weight:700}.card .l{color:var(--mut);font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.finding{display:flex;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line)}.finding:last-child{border:0}
+.sev{flex:none;min-width:58px;text-align:center;height:20px;padding:0 8px;border-radius:3px;font-size:10.5px;font-weight:700;line-height:20px;text-transform:uppercase;color:#fff;background:var(--info)}
+.sev.high{background:var(--high)}.sev.medium,.sev.warn{background:var(--medium)}.sev.low{background:var(--low)}
+.finding .t{font-weight:600}.finding .d{color:var(--mut);white-space:pre-wrap;font-size:12.5px}.finding .s{color:var(--mut);font-size:11.5px}
+.expo{padding:14px}.gauge{height:10px;border-radius:5px;background:var(--chip);overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#00e5ff,#2f8cff,#8a5cff)}
+.fill.alto{background:linear-gradient(90deg,#2f8cff,#ffb347,#ff8c42)}.fill.crítico{background:linear-gradient(90deg,#ffb347,#ff5c7a)}
+.lvl{margin:8px 0 4px;font-size:15px}.expo .d{color:var(--mut);font-size:12.5px}
+.notice{background:var(--panel);border:1px solid var(--medium);border-left:4px solid var(--medium);border-radius:4px;padding:10px 14px;margin-bottom:10px;font-size:13px}
+canvas{width:100%;height:480px;display:block;background:var(--panel);border:1px solid var(--line);border-radius:6px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;color:var(--mut);font-size:12px}.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px 14px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13px}
+th{color:var(--mut);font-size:11.5px;font-weight:600;background:var(--chip)}
+td.v{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}td.a{color:var(--mut);font-size:12.5px}
+.tag{display:inline-block;background:var(--chip);color:var(--mut);border-radius:3px;padding:0 6px;margin:1px 3px 1px 0;font-size:11px}
+ul.links{list-style:none;margin:0;padding:0}ul.links li{padding:7px 14px;border-bottom:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between}
+ul.links li:last-child{border:0}ul.links .u{color:var(--mut);font-size:11.5px;word-break:break-all}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:var(--mut);font-size:12.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer b{color:var(--txt)}footer a{margin-right:12px}
+a{color:var(--link)}
+@media print{body{background:#fff;color:#000}canvas{display:none}.wrap{padding:0}}
+</style>
+</head>
+<body><div class="wrap">
+<header>
+  <div class="brand">{{ brand.TOOL }}<small>{{ brand.TAGLINE }}</small></div>
+  <div class="meta">Objetivo: <b>{{ targets|join(', ') }}</b><br>
+  Generado: <b>{{ generated }}</b> · Duración: <b>{{ "%.1f"|format(stats.elapsed) }} s</b><br>
+  Profundidad {{ depth }} · {{ stats.executed }} consultas · v{{ version }}</div>
+</header>
+
+<h2>Resumen</h2>
+<div class="cards">
+  <div class="card"><div class="n">{{ data.nodes|length - manual_total }}</div><div class="l">entidades</div></div>
+  <div class="card"><div class="n">{{ profiles_total }}</div><div class="l">perfiles</div></div>
+  {% for kind, items in groups %}{% if kind != 'profile' %}<div class="card"><div class="n">{{ items|length }}</div><div class="l">{{ kind }}</div></div>{% endif %}{% endfor %}
+  <div class="card"><div class="n" style="color:var(--high)">{{ counts.high }}</div><div class="l">hallazgos críticos</div></div>
+  <div class="card"><div class="n">{{ manual_total }}</div><div class="l">consultas manuales</div></div>
+</div>
+
+<h2>Resumen ejecutivo</h2>
+<p style="margin:0 0 8px">{{ narrative }}</p>
+<h2>Exposición</h2>
+<div class="panel expo"><div class="gauge"><div class="fill {{ exposure.nivel|lower }}" style="width:{{ exposure.puntaje }}%"></div></div>
+<div class="lvl"><b>{{ exposure.nivel }}</b> · {{ exposure.puntaje }}/100 · {{ exposure.criticos }} críticos, {{ exposure.medios }} medios</div>
+{% for f in exposure.factores %}<div class="d">· {{ f }}</div>{% endfor %}</div>
+{% if changes %}<h2>Cambios desde {{ changes.desde }}</h2>
+<div class="panel"><table><tr><th>Entidades nuevas</th><th>Ya no aparecen</th><th>Hallazgos nuevos</th><th>Resueltos</th></tr>
+<tr><td>{{ changes.entidades_nuevas|length }}</td><td>{{ changes.entidades_ausentes|length }}</td><td>{{ changes.hallazgos_nuevos|length }}</td><td>{{ changes.hallazgos_resueltos|length }}</td></tr></table>
+{% for s, t in changes.hallazgos_nuevos[:10] %}<div class="finding"><span class="sev {{ s }}">nuevo</span><div class="t">{{ t }}</div></div>{% endfor %}</div>{% endif %}
+
+{% if notes %}<h2>Hallazgos</h2>
+<div class="panel">{% for n in notes %}
+  <div class="finding"><span class="sev {{ n.severity }}">{{ {'high':'alto','medium':'medio','warn':'aviso','low':'bajo','info':'info'}.get(n.severity, n.severity) }}</span>
+  <div><div class="t">{{ n.title }}</div>{% if n.detail %}<div class="d">{{ n.detail }}</div>{% endif %}
+  <div class="s">{{ n.source }}{% if n.node %} · {{ n.node.split(':',1)[1] }}{% endif %}</div></div></div>{% endfor %}
+</div>{% endif %}
+
+{% if data.correlations %}<h2>Correlaciones</h2>
+<div class="panel">{% for c in data.correlations %}
+  <div class="finding"><span class="sev info">{{ c.confidence }}</span>
+  <div><div class="t">{{ c.title }}</div><div class="s">{{ c.type }}{% if c.evidence %} · {{ c.evidence|join(', ') }}{% endif %}</div></div></div>{% endfor %}
+</div>{% endif %}
+
+{% if dossier %}<h2>Expediente consolidado</h2>
+<p style="color:var(--mut);margin:0 0 6px">Datos reunidos de todas las fuentes. La confianza es alta cuando dos o más fuentes independientes coinciden.</p>
+<div class="panel"><table><tr><th style="width:170px">Dato</th><th>Valores</th></tr>
+{% for section, rows in dossier.items() %}<tr><td><b>{{ section }}</b></td><td>
+{% for r in rows[:40] %}<div>{{ r.valor }} <span class="tag">{{ r.confianza }}</span></div>{% endfor %}
+{% if rows|length > 40 %}<div class="a">y {{ rows|length - 40 }} más en el JSON</div>{% endif %}</td></tr>{% endfor %}
+</table></div>{% endif %}
+
+{% if timeline %}<h2>Línea de tiempo</h2>
+<div class="panel"><table><tr><th style="width:110px">Fecha</th><th>Evento</th><th>Detalle</th></tr>
+{% for e in timeline %}<tr><td class="v">{{ e.fecha }}</td><td>{{ e.evento }}</td><td class="a">{{ e.detalle }}</td></tr>{% endfor %}</table></div>{% endif %}
+
+{% if profiles %}<h2>Perfiles encontrados ({{ profiles_total }})</h2>
+{% for cat, items in profiles %}<h3>{{ cat }}</h3>
+<div class="panel"><table><tr><th>Sitio</th><th>Perfil</th><th>Datos</th><th>Fuente</th></tr>
+{% for n in items|sort(attribute='value') %}<tr><td>{{ n.attrs.get('site', '') }}</td>
+<td class="v"><a href="{{ n.value }}" rel="noopener noreferrer">{{ n.value }}</a></td>
+<td class="a">{% for k, v in n.attrs.items() if k not in ("site","category","username") and v is not mapping and v is not none %}<div><b>{{ k }}</b>: {{ v if v is string or v is number else v|join(', ') }}</div>{% endfor %}</td>
+<td>{% for s in n.sources %}<span class="tag">{{ s }}</span>{% endfor %}</td></tr>{% endfor %}
+</table></div>{% endfor %}{% endif %}
+
+{% if darkweb %}<h2>Menciones en dark web ({{ darkweb|length }})</h2>
+<div class="notice"><b>Precaución.</b> Son resultados de un índice, no contenido verificado. No abras estos enlaces fuera de Tor Browser, no descargues archivos y confirma cualquier hallazgo por una fuente legítima antes de actuar.</div>
+<div class="panel"><table><tr><th>Título</th><th>Dirección</th><th>Índice</th></tr>
+{% for n in darkweb %}<tr><td>{{ n.attrs.get('title') or '(sin título)' }}<div class="a">{{ n.attrs.get('snippet','') }}</div></td>
+<td class="v">{{ n.value }}</td><td>{{ n.attrs.get('index','') }}</td></tr>{% endfor %}</table></div>{% endif %}
+
+{% if manual %}<h2>Consultas manuales sugeridas ({{ manual_total }})</h2>
+<p style="color:var(--mut);margin:0 0 6px">Fuentes legítimas sin API gratuita: el enlace abre la consulta ya preparada. Los resultados deben verificarse antes de atribuir nada a una persona.</p>
+{% for purpose, items in manual %}<h3>{{ purpose }}</h3>
+<div class="panel"><ul class="links">{% for n in items %}<li><a href="{{ n.value }}" rel="noopener noreferrer">{{ n.attrs.get('label', n.value) }}</a><span class="u">{{ n.value[:90] }}</span></li>{% endfor %}</ul></div>{% endfor %}{% endif %}
+
+<h2>Grafo de relaciones</h2>
+<canvas id="g" width="1100" height="480"></canvas>
+<div class="legend" id="legend"></div>
+
+{% for kind, items in groups %}{% if kind != 'profile' %}
+<h2>{{ kind }} ({{ items|length }})</h2>
+<div class="panel"><table><tr><th>Valor</th><th>Detalle</th><th>Fuentes</th></tr>
+{% for n in items %}<tr><td class="v">{% if n.value.startswith('http') %}<a href="{{ n.value }}" rel="noopener noreferrer">{{ n.value }}</a>{% else %}{{ n.value }}{% endif %}</td>
+<td class="a">{% for k, v in n.attrs.items() if v is not mapping and v is not none %}<div><b>{{ k }}</b>: {{ v if v is string or v is number else v|join(', ') }}</div>{% endfor %}</td>
+<td>{% for s in n.sources %}<span class="tag">{{ s }}</span>{% endfor %}</td></tr>{% endfor %}
+</table></div>{% endif %}{% endfor %}
+
+{% if stats.errors or stats.skipped %}<h2>Ejecución</h2>
+<div class="panel">
+{% for e in stats.errors %}<div class="finding"><span class="sev warn">error</span><div><div class="t">{{ e.module }} → {{ e.target }}</div><div class="d">{{ e.error }}</div></div></div>{% endfor %}
+{% for s in stats.skipped %}<div class="finding"><span class="sev info">omitido</span><div class="t">{{ s }}</div></div>{% endfor %}
+</div>{% endif %}
+
+<footer>
+  <div><b>{{ brand.COMPANY }}</b><br>{{ brand.CREDIT }}<br>{{ brand.AUTHOR }} ({{ brand.HANDLE }}) · {{ brand.LOCATION }}<br>{{ brand.NOTICE }}</div>
+  <div>{% for name, url in brand.SOCIALS.items() %}<a href="{{ url }}" rel="noopener noreferrer">{{ name }}</a>{% endfor %}<br><a href="{{ brand.REPO }}" rel="noopener noreferrer">{{ brand.REPO }}</a></div>
+</footer>
+</div>
+
+<script id="graph-data" type="application/json">{{ graph_json|safe }}</script>
+<script>
+(function(){
+  var d=JSON.parse(document.getElementById('graph-data').textContent);
+  var cv=document.getElementById('g'),cx=cv.getContext('2d');
+  var dark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var colors={domain:'#3b6ea5',ip:'#b7791f',email:'#3a86a8',username:'#7a5c99',profile:'#a8506f',asn:'#7b8794',url:'#7b8794',org:'#6b7fb3',phone:'#c06a3a',name:'#4a6fa5',doc:'#8a6d3b'};
+  var lg=document.getElementById('legend');
+  Object.keys(colors).forEach(function(k){if(d.nodes.some(function(n){return n.kind===k}))lg.innerHTML+='<span><i style="background:'+colors[k]+'"></i>'+k+'</span>'});
+  var W=cv.width,H=cv.height,idx={},nodes=d.nodes.slice(0,400).map(function(n,i){
+    var a=i*2.399,r=30+Math.sqrt(i)*28;var o={id:n.id,kind:n.kind,label:n.value,x:W/2+Math.cos(a)*r,y:H/2+Math.sin(a)*r,vx:0,vy:0,deg:0};idx[n.id]=o;return o});
+  var links=d.edges.filter(function(e){return idx[e.src]&&idx[e.dst]}).map(function(e){idx[e.src].deg++;idx[e.dst].deg++;return{a:idx[e.src],b:idx[e.dst]}});
+  var drag=null,ticks=0;
+  function step(){
+    for(var i=0;i<nodes.length;i++)for(var j=i+1;j<nodes.length;j++){
+      var a=nodes[i],b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,q=dx*dx+dy*dy+.01,f=1400/q,m=Math.sqrt(q);
+      a.vx+=dx/m*f;a.vy+=dy/m*f;b.vx-=dx/m*f;b.vy-=dy/m*f}
+    links.forEach(function(l){var dx=l.b.x-l.a.x,dy=l.b.y-l.a.y,m=Math.sqrt(dx*dx+dy*dy)||1,f=(m-70)*.02;
+      l.a.vx+=dx/m*f;l.a.vy+=dy/m*f;l.b.vx-=dx/m*f;l.b.vy-=dy/m*f});
+    nodes.forEach(function(n){n.vx+=(W/2-n.x)*.003;n.vy+=(H/2-n.y)*.003;
+      if(n!==drag){n.x+=n.vx*.5;n.y+=n.vy*.5}n.vx*=.8;n.vy*=.8;
+      n.x=Math.max(10,Math.min(W-10,n.x));n.y=Math.max(10,Math.min(H-10,n.y))})}
+  function draw(){
+    cx.clearRect(0,0,W,H);cx.strokeStyle=dark?'rgba(152,160,171,.35)':'rgba(92,99,112,.35)';cx.lineWidth=1;
+    links.forEach(function(l){cx.beginPath();cx.moveTo(l.a.x,l.a.y);cx.lineTo(l.b.x,l.b.y);cx.stroke()});
+    nodes.forEach(function(n){var r=4+Math.min(n.deg,12)*.7;cx.fillStyle=colors[n.kind]||'#888';
+      cx.beginPath();cx.arc(n.x,n.y,r,0,7);cx.fill();
+      if(n.deg>=3||nodes.length<40){cx.fillStyle=dark?'#c3cad3':'#3c434d';cx.font='10px sans-serif';cx.fillText(n.label.slice(0,28),n.x+r+3,n.y+3)}})}
+  function loop(){if(ticks<500||drag){step();ticks++}draw();requestAnimationFrame(loop)}
+  function pos(e){var r=cv.getBoundingClientRect();return{x:(e.clientX-r.left)*W/r.width,y:(e.clientY-r.top)*H/r.height}}
+  cv.addEventListener('mousedown',function(e){var p=pos(e);drag=nodes.find(function(n){return Math.hypot(n.x-p.x,n.y-p.y)<12})||null});
+  cv.addEventListener('mousemove',function(e){if(drag){var p=pos(e);drag.x=p.x;drag.y=p.y}});
+  window.addEventListener('mouseup',function(){drag=null});
+  loop();
+})();
+</script>
+</body></html>
