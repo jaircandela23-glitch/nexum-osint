@@ -1,0 +1,25 @@
+# ~/.config/nexum-osint/config.toml
+# Lo más cómodo es generarlo con:  nexum-osint setup
+# Las keys también se pueden pasar por entorno: NEXUM_VIRUSTOTAL=xxxx
+
+[keys]
+# github = ""          # token sin permisos: sube el límite de 60 a 5.000/h
+# emailrep = ""
+# hunter = ""          # hunter.io, 25 búsquedas/mes
+# ipqs = ""            # ipqualityscore.com, 5.000/mes
+# veriphone = ""       # veriphone.io, 1.000/mes
+# numverify = ""       # apilayer.net, 100/mes
+# virustotal = ""      # 4 consultas/min
+# securitytrails = ""  # 50/mes
+# abuseipdb = ""       # 1.000/día
+# ipinfo = ""          # 50.000/mes
+# greynoise = ""
+# otx = ""
+# urlscan = ""
+# instagram_session = ""   # cookie sessionid de una cuenta secundaria (módulo instagram)
+
+[network]
+timeout = 20          # segundos por petición
+cache_ttl = 21600     # 6 h; las respuestas repetidas no gastan cuota
+# proxy = "socks5://127.0.0.1:9050"
+tor_proxy = "socks5h://127.0.0.1:9050"   # usado solo por las funciones de dark web

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nexum-osint"
+version = "3.4.0"
+description = "Framework modular y asíncrono de inteligencia de fuentes abiertas (OSINT)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Jair Muñoz Candela (J@ir.d3v) - NEXUM Intelligence Systems" }]
+keywords = ["osint", "open-source-intelligence", "cybersecurity", "recon", "kali", "nexum", "threat-intelligence", "username-search", "email-osint", "domain-recon", "metadata-extraction", "google-dorks", "infostealer", "peru"]
+dependencies = [
+    "httpx[socks]>=0.27",
+    "rich>=13",
+    "jinja2>=3.1",
+    "reportlab>=4",
+    "Pillow>=10",
+    "phonenumbers>=8.13",
+]
+
+[project.scripts]
+nexum-osint = "nexum_osint.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["nexum_osint*"]
+
+[tool.setuptools.package-data]
+nexum_osint = ["data/*.json", "data/*.txt", "reporting/templates/*.j2"]

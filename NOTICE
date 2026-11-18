@@ -1,0 +1,34 @@
+NEXUM OSINT
+Copyright (c) 2026 Jair Muñoz Candela - NEXUM Intelligence Systems
+
+Autor y creador: Jair Muñoz Candela (J@ir.d3v)
+Cargo: Fundador de NEXUM Intelligence Systems
+Ubicación: Lima, Perú
+Repositorio: https://github.com/jaircandela23-glitch/nexum-osint
+
+Todo trabajo derivado debe conservar este aviso y el de LICENSE, y mencionar
+al autor original.
+
+Las fuentes de datos consultadas (APIs y sitios públicos) pertenecen a sus
+respectivos titulares y se rigen por sus propios términos de uso.
+
+Listas de sitios descargadas por el usuario con `nexum-osint sites --update`:
+  - WhatsMyName, licencia CC BY-SA 4.0, WebBreacher y colaboradores.
+  - Sherlock, licencia MIT, Sherlock Project.
+
+Referencias de diseño y atribución:
+  - SpiderFoot, licencia MIT, Copyright (c) 2022 Steve Micallef.
+    Varias fuentes de NEXUM (PGP, Robtex, listas negras DNS, secuestro de subdominios,
+    buckets, Wikipedia, certificado TLS) siguen los servicios y técnicas que SpiderFoot
+    documenta. El código de NEXUM es una reescritura propia sobre otra arquitectura;
+    el aviso de licencia de SpiderFoot se conserva en CREDITS.md.
+  - Toutatis, licencia GPL-3.0, megadose.
+    El módulo `instagram` sigue el mismo flujo de consulta pública, pero no contiene
+    código de Toutatis. Si copias código de ese proyecto, el resultado debe distribuirse
+    bajo GPL-3.0.
+
+Otras referencias:
+  - XposedOrNot, licencia MIT, XposedOrNot y HackUnderway: API de filtraciones de correo.
+  - OSINT Tools Library, OSINT Newsletter: directorio opcional que el usuario importa a su equipo;
+    no se redistribuye.
+  - libphonenumber, licencia Apache-2.0, Google (puerto en Python `phonenumbers`): numeración telefónica.
